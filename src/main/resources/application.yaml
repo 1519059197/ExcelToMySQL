@@ -1,0 +1,25 @@
+server:
+  port: 8080
+  servlet:
+    # 应用的访问路径
+    context-path: /
+# Spring配置
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource #Druid连接池
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://116.62.119.24:6355/waimai?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    username: root
+    password: rong980325.
+
+
+# MyBatis配置
+mybatis:
+  # 搜索指定包别名
+  typeAliasesPackage: com.example.demo.entity
+  # 配置mapper的扫描，找到所有的mapper.xml映射文件
+  mapperLocations: classpath*:mapper/**/*Mapper.xml
+mapper:
+  mappers: com.example.demo.config.TkMapperConfig
+  identity: MYSQL # 配置主键自动增长(使用MYSQL原生方式)
+
